@@ -1,0 +1,347 @@
+/* ===== Variabel Warna ===== */
+:root {
+    --coklat-tua: #5d4037;
+    --coklat: #795548;
+    --coklat-muda: #a1887f;
+    --krem: #fff8e7;
+    --krem-gelap: #f5e6c8;
+    --emas: #e0a63a;
+    --teks: #4a4039;
+    --putih: #ffffff;
+    --bayangan: 0 8px 24px rgba(93, 64, 55, 0.15);
+}
+
+/* ===== Reset & Dasar ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--krem);
+    color: var(--teks);
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ===== Navigasi ===== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(93, 64, 55, 0.95);
+    backdrop-filter: blur(6px);
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: var(--putih);
+    text-decoration: none;
+    margin: 0 16px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+nav a:hover {
+    color: var(--emas);
+    border-color: var(--emas);
+}
+
+/* ===== Hero / Header ===== */
+header {
+    background:
+        linear-gradient(135deg, rgba(93, 64, 55, 0.92), rgba(161, 136, 127, 0.88)),
+        repeating-linear-gradient(45deg, #795548 0 12px, #6d4c41 12px 24px);
+    color: var(--putih);
+    text-align: center;
+    padding: 90px 20px 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: var(--krem);
+    clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+.hero-ikon {
+    font-size: 3.5rem;
+    display: inline-block;
+    animation: melayang 3s ease-in-out infinite;
+}
+
+header h1 {
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    letter-spacing: 3px;
+    margin: 10px 0;
+    animation: munculAtas 1s ease both;
+}
+
+header p {
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.92;
+    animation: munculAtas 1.3s ease both;
+}
+
+/* ===== Layout ===== */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+section {
+    margin: 50px 0;
+}
+
+h2 {
+    color: var(--coklat);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: var(--emas);
+    border-radius: 4px;
+    margin: 12px auto 0;
+}
+
+/* ===== Pembuka ===== */
+.pembuka {
+    background: var(--putih);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: var(--bayangan);
+    border-top: 5px solid var(--emas);
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+}
+
+.pembuka p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+/* ===== Kartu Anggota ===== */
+.anggota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background: var(--putih);
+    padding: 35px 22px 28px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: var(--bayangan);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(135deg, var(--coklat), var(--coklat-muda));
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 34px rgba(93, 64, 55, 0.28);
+}
+
+.foto {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    border: 5px solid var(--putih);
+    background: var(--krem-gelap);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.6rem;
+    overflow: hidden;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: var(--coklat-tua);
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.peran {
+    display: inline-block;
+    background: var(--krem-gelap);
+    color: var(--coklat);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 3px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    padding: 4px 0;
+    border-top: 1px dashed var(--krem-gelap);
+}
+
+.card p span {
+    color: var(--coklat-muda);
+    font-weight: 600;
+}
+
+/* ===== Nilai Keluarga ===== */
+.nilai {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 22px;
+}
+
+.nilai-item {
+    background: var(--putih);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: var(--bayangan);
+    transition: transform 0.3s;
+}
+
+.nilai-item:hover {
+    transform: scale(1.05);
+}
+
+.nilai-item .ikon {
+    font-size: 2.6rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nilai-item h3 {
+    color: var(--coklat);
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.nilai-item p {
+    font-size: 0.9rem;
+}
+
+/* ===== Tentang ===== */
+.tentang {
+    background: linear-gradient(135deg, var(--coklat), var(--coklat-tua));
+    color: var(--putih);
+    padding: 45px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--bayangan);
+}
+
+.tentang h2 {
+    color: var(--putih);
+}
+
+.tentang p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: var(--coklat-tua);
+    color: var(--putih);
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: 50px;
+}
+
+footer p:first-child {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+footer p:last-child {
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+/* ===== Animasi ===== */
+@keyframes munculAtas {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes melayang {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 4px 8px;
+        font-size: 0.85rem;
+    }
+
+    header {
+        padding: 60px 15px 90px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
